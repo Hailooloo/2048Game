@@ -1,0 +1,20 @@
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 编辑器 / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志
+*.log
+npm-debug.log*
+
+# 依赖（如后续引入构建工具）
+node_modules/
+dist/
+
+# 打包产物
+*.zip

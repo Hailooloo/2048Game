@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>2048 · 数字合成</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orbs">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <main class="app">
+    <header class="app-header">
+      <div class="title-block">
+        <h1 class="logo">2048</h1>
+        <p class="subtitle">合并相同数字，冲击 <strong>2048</strong></p>
+      </div>
+
+      <div class="score-cluster">
+        <div class="score-card">
+          <span class="score-label">当前分</span>
+          <span class="score-value" id="score">0</span>
+          <span class="score-add" id="score-add"></span>
+        </div>
+        <div class="score-card best">
+          <span class="score-label">最高分</span>
+          <span class="score-value" id="best">0</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="toolbar">
+      <button class="btn btn-primary" id="new-game">
+        <svg viewBox="0 0 24 24" class="ico"><path d="M12 5V2L8 6l4 4V7a5 5 0 1 1-5 5H5a7 7 0 1 0 7-7z"/></svg>
+        新游戏
+      </button>
+      <button class="btn btn-ghost" id="undo" disabled>
+        <svg viewBox="0 0 24 24" class="ico"><path d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z" transform="scale(-1,1) translate(-24,0)"/></svg>
+        撤销
+      </button>
+    </section>
+
+    <section class="board-wrap">
+      <div class="board" id="board">
+        <div class="grid-bg" id="grid-bg"></div>
+        <div class="tile-layer" id="tile-layer"></div>
+
+        <div class="overlay" id="overlay" hidden>
+          <div class="overlay-inner">
+            <h2 class="overlay-title" id="overlay-title">游戏结束</h2>
+            <p class="overlay-sub" id="overlay-sub">本局得分 0</p>
+            <button class="btn btn-primary" id="overlay-btn">再来一局</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="hint">
+      <span class="kbd-group">
+        <kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd>
+      </span>
+      使用方向键或滑动屏幕移动方块 · <kbd>Z</kbd> 撤销 · <kbd>R</kbd> 重开
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
